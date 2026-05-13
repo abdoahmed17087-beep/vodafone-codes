@@ -1,292 +1,449 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل أكواد اتصالات مصر الشامل 2026</title>
+
+    <title>دليل أكواد فودافون الشامل 2026</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+
         :root {
-            --eti-green: #719917; /* لون اتصالات المميز */
-            --bg-black: #0e0e0e;
+
+            --voda-red: #e60000;
+
+            --voda-black: #0e0e0e;
+
             --card-bg: rgba(255, 255, 255, 0.05);
+
         }
+
+
 
         body {
-            background-color: var(--bg-black);
-            background-image: radial-gradient(circle at top right, #1a2a05, transparent), radial-gradient(circle at bottom left, #051001, transparent);
+
+            background-color: var(--voda-black);
+
+            background-image: radial-gradient(circle at top right, #300, transparent), radial-gradient(circle at bottom left, #200, transparent);
+
             color: #fff;
+
             font-family: 'Cairo', sans-serif;
+
             margin: 0;
+
             padding: 20px;
-            line-height: 1.6;
+
         }
 
-        .container { max-width: 1100px; margin: 0 auto; }
 
-        /* الهيدر */
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+
+
+        /* تنسيق الهيدر مع الصورة والعنوان */
+
         header {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             justify-content: center;
+
             padding: 30px;
-            border-bottom: 2px solid var(--eti-green);
+
+            border-bottom: 2px solid var(--voda-red);
+
             margin-bottom: 30px;
-            text-align: center;
+
         }
 
-        header h1 { margin: 0; font-size: 2.2rem; color: var(--eti-green); }
-        header p { color: #aaa; margin-top: 10px; }
 
-        /* ضبط شريط البحث */
-        .search-container { 
-            margin-bottom: 40px; 
-            position: sticky; 
-            top: 10px; 
-            z-index: 100;
-        }
-        
-        .search-bar {
-            width: 100%;
-            padding: 15px 25px;
-            border-radius: 50px;
-            border: 2px solid #333;
-            background: #1a1a1a;
-            color: #fff;
-            font-size: 1.1rem;
-            font-family: 'Cairo';
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: 0.3s;
-            outline: none;
+
+        .header-title-wrapper {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px; /* المسافة بين الصورة والعنوان */
+
+            margin-bottom: 10px;
+
         }
 
-        .search-bar:focus {
-            border-color: var(--eti-green);
-            box-shadow: 0 0 15px rgba(113, 153, 23, 0.4);
+
+
+        .voda-logo {
+
+            width: 50px; /* حجم الشعار */
+
+            height: auto;
+
         }
 
-        /* ضبط المربعات (Cards) */
+
+
+        header h1 {
+
+            margin: 0;
+
+            font-size: 2rem;
+
+        }
+
+
+
         .section-title {
-            color: var(--eti-green);
-            border-right: 5px solid var(--eti-green);
+
+            color: var(--voda-red);
+
+            border-right: 5px solid var(--voda-red);
+
             padding-right: 15px;
+
             margin: 40px 0 20px;
+
             font-size: 1.5rem;
-            background: rgba(113, 153, 23, 0.1);
-            display: inline-block;
-            padding-left: 20px;
+
+            background: rgba(230, 0, 0, 0.1);
+
         }
+
+
 
         .grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
             gap: 20px;
+
         }
+
+
 
         .card {
+
             background: var(--card-bg);
+
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 18px;
-            padding: 25px;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
             text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(5px);
+
+            transition: 0.3s;
+
         }
+
+
 
         .card:hover {
-            border-color: var(--eti-green);
-            transform: translateY(-8px);
-            background: rgba(113, 153, 23, 0.08);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+            border-color: var(--voda-red);
+
+            transform: translateY(-5px);
+
+            background: rgba(230, 0, 0, 0.05);
+
         }
 
-        .card-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #efefef;
-        }
 
-        /* منطقة الكود */
-        .code-wrapper {
+
+        .code-text {
+
             background: #000;
-            color: var(--eti-green);
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 1.5rem;
+
+            color: var(--voda-red);
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            font-size: 1.4rem;
+
             font-weight: bold;
+
+            display: block;
+
             direction: ltr !important; 
+
             unicode-bidi: bidi-override;
-            margin: 10px 0;
-            border: 1px solid #222;
+
             cursor: pointer;
-            transition: 0.2s;
+
+            border: 1px dashed #444;
+
         }
 
-        .code-wrapper:active {
-            transform: scale(0.95);
-            background: #111;
-        }
+
 
         .copy-btn {
-            background: var(--eti-green);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Cairo';
-            font-weight: bold;
-            transition: 0.3s;
+
             margin-top: 10px;
+
+            background: none;
+
+            border: 1px solid #555;
+
+            color: #aaa;
+
+            padding: 5px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 0.8rem;
+
         }
 
-        .copy-btn:hover {
-            filter: brightness(1.2);
-            box-shadow: 0 5px 15px rgba(113, 153, 23, 0.3);
-        }
 
-        footer { text-align: center; margin-top: 80px; padding: 30px; color: #555; border-top: 1px solid #222; }
 
-        /* إخفاء المربعات عند البحث */
-        .hidden { display: none !important; }
+        .copy-btn:hover { background: var(--voda-red); color: white; border-color: var(--voda-red); }
+
+
+
+        footer { text-align: center; margin-top: 60px; padding: 20px; color: #555; border-top: 1px solid #222; }
+
     </style>
+
 </head>
+
 <body>
 
+
+
 <div class="container">
-    <header>
-        <h1>دليل أكواد اتصالات مصر 2026</h1>
-        <p>ابحث عن الخدمة واضغط على الكود للنسخ الفوري</p>
-    </header>
+
+   <header>
+
+    <h1>دليل أكواد اتصالات مصر المطور</h1>
+
+    <p>جميع الأكواد التي تحتاجها في مكان واحد (تحديث 2026)</p>
+
+</header>
+
+
+
+<div class="container">
 
     <div class="search-container">
+
         <input type="text" id="searchBox" class="search-bar" placeholder="ابحث عن كود (رصيد، إنترنت، كاش، باقات)..." onkeyup="filterCodes()">
+
     </div>
+
+
 
     <!-- الأكواد الأساسية -->
+
     <h2 class="section-title">⚙️ الأكواد الأساسية والرصيد</h2>
-    <div class="grid">
+
+    <div class="grid" id="mainGrid">
+
         <div class="card">
+
             <span class="card-title">معرفة رقم الهاتف</span>
+
             <div class="code-wrapper" onclick="copyCode('*947#')">*947#</div>
-            <button class="copy-btn" onclick="copyCode('*947#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">الاستعلام عن الرصيد</span>
+
             <div class="code-wrapper" onclick="copyCode('*555#')">*555#</div>
-            <button class="copy-btn" onclick="copyCode('*555#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">سلفني شكراً</span>
+
             <div class="code-wrapper" onclick="copyCode('*911#')">*911#</div>
-            <button class="copy-btn" onclick="copyCode('*911#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">تحويل الرصيد</span>
-            <div class="code-wrapper" onclick="copyCode('*557#')">*557#</div>
-            <button class="copy-btn" onclick="copyCode('*557#')">نسخ الكود</button>
+
+            <div class="code-wrapper" onclick="copyCode('*557*الرقم*المبلغ#')">*557#</div>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
     </div>
+
+
 
     <!-- باقات الإنترنت -->
+
     <h2 class="section-title">🌐 باقات الإنترنت اتصالات</h2>
+
     <div class="grid">
+
         <div class="card">
-            <span class="card-title">الاشتراك في الباقات</span>
+
+            <span class="card-title">الاشتراك في باقات الإنترنت</span>
+
             <div class="code-wrapper" onclick="copyCode('*566#')">*566#</div>
-            <button class="copy-btn" onclick="copyCode('*566#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">إلغاء باقة الإنترنت</span>
+
             <div class="code-wrapper" onclick="copyCode('*566*2375#')">*566*2375#</div>
-            <button class="copy-btn" onclick="copyCode('*566*2375#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
-            <span class="card-title">استهلاك الإنترنت</span>
+
+            <span class="card-title">معرفة استهلاك الإنترنت</span>
+
             <div class="code-wrapper" onclick="copyCode('*558*5#')">*558*5#</div>
-            <button class="copy-btn" onclick="copyCode('*558*5#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
     </div>
+
+
 
     <!-- اتصالات كاش -->
+
     <h2 class="section-title">💰 اتصالات كاش</h2>
+
     <div class="grid">
+
         <div class="card">
+
             <span class="card-title">خدمات اتصالات كاش</span>
+
             <div class="code-wrapper" onclick="copyCode('*777#')">*777#</div>
-            <button class="copy-btn" onclick="copyCode('*777#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">رقم خدمة عملاء كاش</span>
+
             <div class="code-wrapper" onclick="copyCode('778')">778</div>
-            <button class="copy-btn" onclick="copyCode('778')">اتصل الآن</button>
+
+            <button class="copy-btn">اتصل الآن</button>
+
         </div>
+
     </div>
+
+
 
     <!-- خدمات إضافية -->
+
     <h2 class="section-title">📞 خدمات إضافية مميزة</h2>
+
     <div class="grid">
+
         <div class="card">
-            <span class="card-title">خاصية غير متاح</span>
+
+            <span class="card-title">جعل الخط غير متاح (خاصية)</span>
+
             <div class="code-wrapper" onclick="copyCode('*21*787#')">*21*787#</div>
-            <button class="copy-btn" onclick="copyCode('*21*787#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
-            <span class="card-title">إلغاء غير متاح</span>
+
+            <span class="card-title">إلغاء خاصية غير متاح</span>
+
             <div class="code-wrapper" onclick="copyCode('##002#')">##002#</div>
-            <button class="copy-btn" onclick="copyCode('##002#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">خدمة كلمني شكراً</span>
-            <div class="code-wrapper" onclick="copyCode('*111*رقم الهاتف#')">*111#</div>
-            <button class="copy-btn" onclick="copyCode('*111#')">نسخ الكود</button>
+
+            <div class="code-wrapper" onclick="copyCode('*111*الرقم#')">*111#</div>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
         <div class="card">
+
             <span class="card-title">إلغاء الكول تون</span>
+
             <div class="code-wrapper" onclick="copyCode('*911*7#')">*911*7#</div>
-            <button class="copy-btn" onclick="copyCode('*911*7#')">نسخ الكود</button>
+
+            <button class="copy-btn">نسخ الكود</button>
+
         </div>
+
     </div>
 
-    <footer>
-        تم التصميم بواسطة عبدالله السواح &copy; 2026
-    </footer>
-</div>
+
+
+<footer>
+
+    تم تصميم الموقع بواسطة عبدالله السواح &copy; 2026
+
+</footer>
+
+
 
 <script>
-    // وظيفة النسخ
+
     function copyCode(text) {
+
         navigator.clipboard.writeText(text).then(() => {
-            const tempAlert = document.createElement('div');
-            tempAlert.style = "position:fixed; bottom:20px; right:20px; background:#719917; color:white; padding:10px 20px; border-radius:5px; z-index:1000; font-family:Cairo;";
-            tempAlert.innerText = "تم نسخ الكود: " + text;
-            document.body.appendChild(tempAlert);
-            setTimeout(() => tempAlert.remove(), 2000);
+
+            alert("تم نسخ الكود بنجاح: " + text);
+
         });
+
     }
 
-    // وظيفة البحث الذكي
-    function filterCodes() {
-        let input = document.getElementById('searchBox').value.toLowerCase();
-        let cards = document.getElementsByClassName('card');
-        
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
-            let code = cards[i].querySelector('.code-wrapper').innerText.toLowerCase();
-            
-            if (title.includes(input) || code.includes(input)) {
-                cards[i].classList.remove('hidden');
-            } else {
-                cards[i].classList.add('hidden');
-            }
-        }
-    }
 </script>
 
+
+
 </body>
+
 </html>

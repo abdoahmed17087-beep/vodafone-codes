@@ -114,50 +114,100 @@
 <body>
 
 <div class="container">
-    <header>
-        <div class="header-title-wrapper">
-            <!-- صورة شعار فودافون بجانب العنوان -->
-            <img src="d2VicA-removebg-preview.png" alt="Vodafone Logo" class="voda-logo">
-            <h1>موسوعة أكواد فودافون 2026</h1>
-        </div>
-        <p>دليلك السريع لكل الخدمات والباقات (تحديث شامل)</p>
-    </header>
+   <header>
+    <h1>دليل أكواد اتصالات مصر المطور</h1>
+    <p>جميع الأكواد التي تحتاجها في مكان واحد (تحديث 2026)</p>
+</header>
 
-    <!-- القسم 1: الخدمات الأساسية -->
-    <h2 class="section-title">⚙️ الخدمات الأساسية والرصيد</h2>
-    <div class="grid">
+<div class="container">
+    <div class="search-container">
+        <input type="text" id="searchBox" class="search-bar" placeholder="ابحث عن كود (رصيد، إنترنت، كاش، باقات)..." onkeyup="filterCodes()">
+    </div>
+
+    <!-- الأكواد الأساسية -->
+    <h2 class="section-title">⚙️ الأكواد الأساسية والرصيد</h2>
+    <div class="grid" id="mainGrid">
         <div class="card">
             <span class="card-title">معرفة رقم الهاتف</span>
-            <div class="code-text" onclick="copyCode('*878#')">*878#</div>
-            <button class="copy-btn">نسخ</button>
+            <div class="code-wrapper" onclick="copyCode('*947#')">*947#</div>
+            <button class="copy-btn">نسخ الكود</button>
         </div>
         <div class="card">
             <span class="card-title">الاستعلام عن الرصيد</span>
-            <div class="code-text" onclick="copyCode('*868*1#')">*868*1#</div>
-            <button class="copy-btn">نسخ</button>
+            <div class="code-wrapper" onclick="copyCode('*555#')">*555#</div>
+            <button class="copy-btn">نسخ الكود</button>
         </div>
         <div class="card">
-            <span class="card-title">خدمة سلفني شكراً</span>
-            <div class="code-text" onclick="copyCode('*868*3#')">*868*3#</div>
-            <button class="copy-btn">نسخ</button>
+            <span class="card-title">سلفني شكراً</span>
+            <div class="code-wrapper" onclick="copyCode('*911#')">*911#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">تحويل الرصيد</span>
+            <div class="code-wrapper" onclick="copyCode('*557*الرقم*المبلغ#')">*557#</div>
+            <button class="copy-btn">نسخ الكود</button>
         </div>
     </div>
 
-    <!-- القسم 2: فودافون كاش -->
-    <h2 class="section-title">💰 فودافون كاش (Vodafone Cash)</h2>
+    <!-- باقات الإنترنت -->
+    <h2 class="section-title">🌐 باقات الإنترنت اتصالات</h2>
     <div class="grid">
         <div class="card">
-            <span class="card-title">معرفة رصيد المحفظة</span>
-            <div class="code-text" onclick="copyCode('*9*13#')">*9*13#</div>
-            <button class="copy-btn">نسخ</button>
+            <span class="card-title">الاشتراك في باقات الإنترنت</span>
+            <div class="code-wrapper" onclick="copyCode('*566#')">*566#</div>
+            <button class="copy-btn">نسخ الكود</button>
         </div>
         <div class="card">
-            <span class="card-title">تحويل الأموال</span>
-            <div class="code-text" onclick="copyCode('*9*7#')">*9*7#</div>
-            <button class="copy-btn">نسخ</button>
+            <span class="card-title">إلغاء باقة الإنترنت</span>
+            <div class="code-wrapper" onclick="copyCode('*566*2375#')">*566*2375#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">معرفة استهلاك الإنترنت</span>
+            <div class="code-wrapper" onclick="copyCode('*558*5#')">*558*5#</div>
+            <button class="copy-btn">نسخ الكود</button>
         </div>
     </div>
-</div>
+
+    <!-- اتصالات كاش -->
+    <h2 class="section-title">💰 اتصالات كاش</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="card-title">خدمات اتصالات كاش</span>
+            <div class="code-wrapper" onclick="copyCode('*777#')">*777#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">رقم خدمة عملاء كاش</span>
+            <div class="code-wrapper" onclick="copyCode('778')">778</div>
+            <button class="copy-btn">اتصل الآن</button>
+        </div>
+    </div>
+
+    <!-- خدمات إضافية -->
+    <h2 class="section-title">📞 خدمات إضافية مميزة</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="card-title">جعل الخط غير متاح (خاصية)</span>
+            <div class="code-wrapper" onclick="copyCode('*21*787#')">*21*787#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">إلغاء خاصية غير متاح</span>
+            <div class="code-wrapper" onclick="copyCode('##002#')">##002#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">خدمة كلمني شكراً</span>
+            <div class="code-wrapper" onclick="copyCode('*111*الرقم#')">*111#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+        <div class="card">
+            <span class="card-title">إلغاء الكول تون</span>
+            <div class="code-wrapper" onclick="copyCode('*911*7#')">*911*7#</div>
+            <button class="copy-btn">نسخ الكود</button>
+        </div>
+    </div>
 
 <footer>
     تم تصميم الموقع بواسطة عبدالله السواح &copy; 2026

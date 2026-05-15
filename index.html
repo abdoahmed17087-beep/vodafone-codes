@@ -132,17 +132,22 @@
 <body>
 
 <div class="container">
-    <header>
-        <div class="brand-wrapper">
-            <!-- Vodafone Logo Placeholder -->
-            <svg class="vodafone-logo" viewBox="0 0 100 100" src="d2VicA-removebg-preview.png">
-                <circle cx="50" cy="50" r="45" fill="#e60000"/>
-                <path d="M50 20 C35 20 25 35 25 50 C25 65 35 80 50 80 C65 80 75 65 75 50 C75 35 65 20 50 20 Z" fill="white"/>
-            </svg>
-            <h1>دليل أكواد <span>Vodafone</span> 2026</h1>
-        </div>
-        <p>جميع أكواد خدمات فودافون مصر المحدثة</p>
-    </header>
+<!-- استبدل قسم الـ Header في كودك بهذا القسم -->
+<header>
+    <div class="brand-wrapper">
+        <!-- تم تصحيح الشعار هنا: استخدام img بدلاً من svg إذا كانت لديك صورة خارجية -->
+        <img src="d2VicA-removebg-preview.png" alt="Vodafone Logo" class="vodafone-logo" onerror="this.style.display='none'">
+        
+        <!-- في حال لم توجد الصورة، سيظهر هذا الرسم كبديل احترافي -->
+        <svg class="vodafone-logo" viewBox="0 0 100 100" style="width:60px; height:60px;">
+            <circle cx="50" cy="50" r="45" fill="#e60000"/>
+            <path d="M50 20 C35 20 25 35 25 50 C25 65 35 80 50 80 C65 80 75 65 75 50 C75 35 65 20 50 20 Z" fill="white"/>
+        </svg>
+        
+        <h1>دليل أكواد <span>Vodafone</span> 2026</h1>
+    </div>
+    <p>جميع أكواد خدمات فودافون مصر المحدثة</p>
+</header>
 
     <input type="text" id="search" class="search-bar" placeholder="ابحث عن الخدمة..." onkeyup="searchCodes()">
 

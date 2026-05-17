@@ -6,7 +6,7 @@
     <title>دليل أكواد فودافون Vodafone الشامل 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* تصفير الهوامش ومنع ميلان وانحراف العناصر نهائياً */
+        /* تصفير كامل للهوامش لمنع أي انحراف أو ميلان تلقائي */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,7 +16,6 @@
         :root {
             --vodafone-red: #e60000;
             --vodafone-dark: #000000;
-            --vodafone-accent: #ff0000;
             --card-bg: rgba(255, 255, 255, 0.05);
         }
 
@@ -36,7 +35,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center; /* يضمن بقاء المحتوى بالكامل في استقامة وسطه واحدة */
+            align-items: center; /* سنترة كل المحتوى في خط مستقيم واحد */
         }
 
         header {
@@ -51,7 +50,6 @@
             width: 100%;
         }
 
-        /* تنسيق منطقة الشعار والعنوان على خط واستقامة واحدة دقيقة */
         .brand-wrapper {
             display: flex;
             align-items: center;
@@ -61,11 +59,9 @@
             width: 100%;
         }
 
-        /* تكبير حجم اللوجو هندسياً بشكل متناسق وثابت */
         .vodafone-logo {
             width: 200px;
             height: auto;
-            border-radius: 50%;
             filter: drop-shadow(0 0 15px rgba(230, 0, 0, 0.5));
             display: block;
         }
@@ -87,15 +83,16 @@
             .vodafone-logo { width: 140px; }
         }
 
-        /* شريط البحث الموزع بانتظام وعلى كامل العرض باستقامة واحدة */
+        /* شريط بحث مستقيم تماماً ومتناسق الابعاد */
         .search-bar {
             width: 100%;
-            padding: 18px;
+            max-width: 600px; /* تحديد أقصى عرض للبحث ليكون مريحاً للعين */
+            padding: 15px;
             border-radius: 15px;
             border: 1px solid #333;
             background: #0a0a0a;
             color: #fff;
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
             text-align: center;
             font-size: 1.1rem;
             outline: none;
@@ -104,11 +101,13 @@
 
         .search-bar:focus { border-color: var(--vodafone-red); }
 
-        /* تنسيق العناوين لضمان الاستقامة الوسطى المستقرة */
+        /* سنترة العناوين في منتصف الصفحة وبشكل مستقيم */
         .section-title-wrapper {
             text-align: center;
             width: 100%;
             margin: 40px 0 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .section-title {
@@ -124,16 +123,17 @@
             box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
         }
 
-        /* شبكة الكروت المتزنة والموزعة هندسياً بالتساوي */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        /* استبدال الـ Grid بـ Flexbox لحل مشكلة ميلان الكروت نهائياً */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* سنترة الكروت في المنتصف تماماً */
             gap: 20px;
             width: 100%;
             margin-bottom: 20px;
         }
 
-        /* تنسيق الكروت الموحد لمنع التراص غير المتزن */
+        /* تنسيق الكروت بشكل هندسي متوازي ومستقيم */
         .card {
             background: var(--card-bg);
             border: 1px solid rgba(230, 0, 0, 0.15);
@@ -146,6 +146,8 @@
             align-items: center;
             backdrop-filter: blur(5px);
             transition: 0.3s;
+            width: 100%;
+            max-width: 320px; /* حجم ثابت يمنع التمدد أو الاعوجاج */
         }
 
         .card:hover {
@@ -161,9 +163,10 @@
             font-size: 1.05rem;
             width: 100%;
             display: block;
+            text-align: center;
         }
 
-        /* هندسة صندوق الكود اللاتيني لمنع التفاف الرموز */
+        /* صندوق الأكواد مستقيم 100% بدون أي تلوّي للرموز */
         .code-box {
             background: #000;
             color: #fff;
@@ -207,7 +210,7 @@
     <div class="section-title-wrapper">
         <h2 class="section-title">⚙️ الخدمات الأساسية وتغيير النظام</h2>
     </div>
-    <div class="grid">
+    <div class="flex-container">
         <div class="card">
             <span class="card-title">خدمة العملاء فودافون</span>
             <div class="code-box" onclick="copyCode('888')">888</div>
@@ -245,7 +248,7 @@
     <div class="section-title-wrapper">
         <h2 class="section-title">🌐 باقات الإنترنت والموبايل داتا</h2>
     </div>
-    <div class="grid">
+    <div class="flex-container">
         <div class="card">
             <span class="card-title">قائمة باقات إنترنت فودافون</span>
             <div class="code-box" onclick="copyCode('*2000#')">*2000#</div>
@@ -267,7 +270,7 @@
     <div class="section-title-wrapper">
         <h2 class="section-title">⭐ أنظمة فليكس (Flex) الشاملة</h2>
     </div>
-    <div class="grid">
+    <div class="flex-container">
         <div class="card">
             <span class="card-title">الاستعلام عن الفليكسات واستهلاكها</span>
             <div class="code-box" onclick="copyCode('*60#')">*60#</div>
@@ -287,9 +290,9 @@
     </div>
 
     <div class="section-title-wrapper">
-        <h2 class="section-title">💰 خدمات فودافون كاش (Vodafone Cash) المادية</h2>
+        <h2 class="section-title">💰 خدمات فودافون كاش (Vodafone Cash)</h2>
     </div>
-    <div class="grid">
+    <div class="flex-container">
         <div class="card">
             <span class="card-title">القائمة الرئيسية لـ فودافون كاش</span>
             <div class="code-box" onclick="copyCode('*9#')">*9#</div>
@@ -315,7 +318,7 @@
     <div class="section-title-wrapper">
         <h2 class="section-title">📞 الخدمات الإضافية والتحويل والإلغاء</h2>
     </div>
-    <div class="grid">
+    <div class="flex-container">
         <div class="card">
             <span class="card-title">إلغاء خدمة الكول تون نهائياً</span>
             <div class="code-box" onclick="copyCode('*550*0#')">*550*0#</div>
@@ -333,7 +336,7 @@
             <div class="code-box" onclick="copyCode('*43#')">*43#</div>
         </div>
         <div class="card">
-            <span class="card-title">الاستعلام عن نقاط فودافون وان (Vodafone One)</span>
+            <span class="card-title">الاستعلام عن نقاط فودافون وان</span>
             <div class="code-box" onclick="copyCode('*818*2#')">*818*2#</div>
         </div>
     </div>
@@ -357,7 +360,7 @@
         let cards = document.getElementsByClassName('card');
         for (let i = 0; i < cards.length; i++) {
             let title = cards[i].innerText.toLowerCase();
-            cards[i].style.display = title.includes(input) ? "" : "none";
+            cards[i].style.display = title.includes(input) ? "flex" : "none";
         }
     }
 </script>

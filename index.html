@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,6 +6,7 @@
     <title>دليل أكواد فودافون Vodafone الشامل 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* تصفير الهوامش ومنع ميلان وانحراف العناصر نهائياً */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,12 +27,16 @@
             font-family: 'Cairo', sans-serif;
             padding: 20px;
             line-height: 1.6;
+            direction: rtl;
         }
 
         .container { 
             max-width: 1100px; 
             margin: 0 auto; 
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* يضمن بقاء المحتوى بالكامل في استقامة وسطه واحدة */
         }
 
         header {
@@ -44,19 +48,26 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
+        /* تنسيق منطقة الشعار والعنوان على خط واستقامة واحدة دقيقة */
         .brand-wrapper {
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: center;
+            gap: 25px;
             margin-bottom: 15px;
+            width: 100%;
         }
 
+        /* تكبير حجم اللوجو هندسياً بشكل متناسق وثابت */
         .vodafone-logo {
-            width: 80px;
+            width: 200px;
             height: auto;
-            filter: drop-shadow(0 0 10px rgba(230, 0, 0, 0.4));
+            border-radius: 50%;
+            filter: drop-shadow(0 0 15px rgba(230, 0, 0, 0.5));
+            display: block;
         }
 
         header h1 { 
@@ -66,19 +77,38 @@
             text-shadow: 0 0 15px rgba(230, 0, 0, 0.3); 
         }
 
+        header h1 span {
+            color: var(--vodafone-red);
+        }
+
+        @media (max-width: 768px) {
+            .brand-wrapper { flex-direction: column; gap: 15px; }
+            header h1 { font-size: 1.8rem; }
+            .vodafone-logo { width: 140px; }
+        }
+
+        /* شريط البحث الموزع بانتظام وعلى كامل العرض باستقامة واحدة */
         .search-bar {
             width: 100%;
-            max-width: 100%;
             padding: 18px;
             border-radius: 15px;
             border: 1px solid #333;
             background: #0a0a0a;
             color: #fff;
-            margin: 0 auto 30px auto;
+            margin-bottom: 30px;
             text-align: center;
             font-size: 1.1rem;
             outline: none;
             display: block;
+        }
+
+        .search-bar:focus { border-color: var(--vodafone-red); }
+
+        /* تنسيق العناوين لضمان الاستقامة الوسطى المستقرة */
+        .section-title-wrapper {
+            text-align: center;
+            width: 100%;
+            margin: 40px 0 20px;
         }
 
         .section-title {
@@ -86,28 +116,54 @@
             background: linear-gradient(135deg, var(--vodafone-red), #8b0000);
             padding: 10px 25px;
             border-radius: 50px;
-            margin: 40px 0 20px;
             font-size: 1.2rem;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
+            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
         }
 
+        /* شبكة الكروت المتزنة والموزعة هندسياً بالتساوي */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
+            gap: 20px;
             width: 100%;
+            margin-bottom: 20px;
         }
 
+        /* تنسيق الكروت الموحد لمنع التراص غير المتزن */
         .card {
             background: var(--card-bg);
             border: 1px solid rgba(230, 0, 0, 0.15);
             border-radius: 15px;
             padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             backdrop-filter: blur(5px);
+            transition: 0.3s;
         }
 
+        .card:hover {
+            border-color: var(--vodafone-red);
+            transform: translateY(-5px);
+            background: rgba(230, 0, 0, 0.05);
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ddd;
+            font-size: 1.05rem;
+            width: 100%;
+            display: block;
+        }
+
+        /* هندسة صندوق الكود اللاتيني لمنع التفاف الرموز */
         .code-box {
             background: #000;
             color: #fff;
@@ -116,9 +172,13 @@
             font-size: 1.4rem;
             font-weight: bold;
             direction: ltr !important;
+            unicode-bidi: bidi-override;
             border: 1px solid #222;
             cursor: pointer;
             transition: 0.3s;
+            width: 100%;
+            display: block;
+            text-align: center;
         }
 
         .code-box:hover {
@@ -126,49 +186,46 @@
             background: #111;
         }
 
-        footer { text-align: center; margin-top: 60px; padding: 30px; color: #666; border-top: 1px solid #1a1a1a; }
+        .code-box:active { transform: scale(0.95); }
+
+        footer { text-align: center; margin-top: 60px; padding: 30px; color: #666; border-top: 1px solid #1a1a1a; width: 100%; }
     </style>
 </head>
 <body>
 
 <div class="container">
-<!-- استبدل قسم الـ Header في كودك بهذا القسم -->
-<header>
-    <div class="brand-wrapper">
-        <!-- تم تصحيح الشعار هنا: استخدام img بدلاً من svg إذا كانت لديك صورة خارجية -->
-        <img src="d2VicA-removebg-preview.png" alt="Vodafone Logo" class="vodafone-logo" onerror="this.style.display='none'">
-        
-        <!-- في حال لم توجد الصورة، سيظهر هذا الرسم كبديل احترافي -->
+    <header>
+        <div class="brand-wrapper">
+            <img src="d2VicA-removebg-preview.png" alt="Vodafone Logo" class="vodafone-logo" onerror="this.style.display='none'">
+            <h1>دليل أكواد <span>Vodafone</span> الشامل</h1>
+        </div>
+        <p>جميع أكواد خدمات فودافون مصر المحدثة لعام 2026</p>
+    </header>
 
-        
-        <h1>دليل أكواد <span>Vodafone</span> 2026</h1>
+    <input type="text" id="search" class="search-bar" placeholder="ابحث عن الخدمة (رصيد، فليكس، نت، كاش)..." onkeyup="searchCodes()">
+
+    <div class="section-title-wrapper">
+        <h2 class="section-title">⚙️ الخدمات الأساسية وتغيير النظام</h2>
     </div>
-    <p>جميع أكواد خدمات فودافون مصر المحدثة</p>
-</header>
-
-    <input type="text" id="search" class="search-bar" placeholder="ابحث عن الخدمة..." onkeyup="searchCodes()">
-
-    <!-- الخدمات الأساسية -->
-    <h2 class="section-title">⚙️ الخدمات الأساسية</h2>
     <div class="grid">
         <div class="card">
-            <span class="card-title">خدمة العملاء</span>
+            <span class="card-title">خدمة العملاء فودافون</span>
             <div class="code-box" onclick="copyCode('888')">888</div>
         </div>
         <div class="card">
-            <span class="card-title">معرفة رقم الهاتف</span>
+            <span class="card-title">معرفة رقم الهاتف الخاص بك</span>
             <div class="code-box" onclick="copyCode('*878#')">*878#</div>
         </div>
         <div class="card">
-            <span class="card-title">الاستعلام عن الرصيد</span>
+            <span class="card-title">الاستعلام عن الرصيد الحالي</span>
             <div class="code-box" onclick="copyCode('*868*1#')">*868*1#</div>
         </div>
         <div class="card">
-            <span class="card-title">شحن الكارت</span>
+            <span class="card-title">شحن كارت رصيد فودافون</span>
             <div class="code-box" onclick="copyCode('*858*الرقم#')">*858*الرقم#</div>
         </div>
         <div class="card">
-            <span class="card-title">تحويل الرصيد</span>
+            <span class="card-title">تحويل الرصيد لخط آخر</span>
             <div class="code-box" onclick="copyCode('*868*2*الرقم*المبلغ#')">*868*2*الرقم*المبلغ#</div>
         </div>
         <div class="card">
@@ -176,103 +233,107 @@
             <div class="code-box" onclick="copyCode('*3#')">*3#</div>
         </div>
         <div class="card">
-            <span class="card-title">خدمة كلمني شكراً</span>
+            <span class="card-title">خدمة كلمني شكراً لخط آخر</span>
             <div class="code-box" onclick="copyCode('*505*الرقم#')">*505*الرقم#</div>
         </div>
         <div class="card">
-            <span class="card-title">خدمة الاحتفاظ بالمكالمات</span>
+            <span class="card-title">خدمة الاحتفاظ بالمكالمات الفائتة</span>
             <div class="code-box" onclick="copyCode('*888*3#')">*888*3#</div>
         </div>
     </div>
 
-    <!-- باقات الإنترنت -->
-    <h2 class="section-title">🌐 باقات الإنترنت</h2>
+    <div class="section-title-wrapper">
+        <h2 class="section-title">🌐 باقات الإنترنت والموبايل داتا</h2>
+    </div>
     <div class="grid">
         <div class="card">
-            <span class="card-title">قائمة باقات الإنترنت</span>
+            <span class="card-title">قائمة باقات إنترنت فودافون</span>
             <div class="code-box" onclick="copyCode('*2000#')">*2000#</div>
         </div>
         <div class="card">
-            <span class="card-title">معرفة استهلاك النت</span>
+            <span class="card-title">معرفة استهلاك باقة الإنترنت المتبقي</span>
             <div class="code-box" onclick="copyCode('*60#')">*60#</div>
         </div>
         <div class="card">
-            <span class="card-title">إلغاء باقة الإنترنت</span>
+            <span class="card-title">إلغاء باقة الإنترنت الحالية نهائياً</span>
             <div class="code-box" onclick="copyCode('*2000*0#')">*2000*0#</div>
         </div>
         <div class="card">
-            <span class="card-title">تفعيل خدمات النت</span>
+            <span class="card-title">تفعيل وتنشيط خدمات الإنترنت والضبط</span>
             <div class="code-box" onclick="copyCode('*888*4#')">*888*4#</div>
         </div>
     </div>
 
-    <!-- فودافون فليكس -->
-    <h2 class="section-title">⭐ أنظمة فليكس</h2>
+    <div class="section-title-wrapper">
+        <h2 class="section-title">⭐ أنظمة فليكس (Flex) الشاملة</h2>
+    </div>
     <div class="grid">
         <div class="card">
-            <span class="card-title">الاستعلام عن الفليكسات</span>
+            <span class="card-title">الاستعلام عن الفليكسات واستهلاكها</span>
             <div class="code-box" onclick="copyCode('*60#')">*60#</div>
         </div>
         <div class="card">
-            <span class="card-title">تجديد باقة فليكس</span>
+            <span class="card-title">تجديد باقة فليكس الحالية مبكراً</span>
             <div class="code-box" onclick="copyCode('*225#')">*225#</div>
         </div>
         <div class="card">
-            <span class="card-title">تحويل فليكسات</span>
+            <span class="card-title">تحويل فليكسات لخط فودافون آخر</span>
             <div class="code-box" onclick="copyCode('*880*الرقم*الفليكسات#')">*880*الرقم*الفليكسات#</div>
         </div>
         <div class="card">
-            <span class="card-title">إضافة فليكسات إضافية</span>
+            <span class="card-title">إضافة فليكسات باقة إضافية جديدة</span>
             <div class="code-box" onclick="copyCode('*880#')">*880#</div>
         </div>
     </div>
 
-    <!-- فودافون كاش -->
-    <h2 class="section-title">💰 فودافون كاش (Vodafone Cash)</h2>
+    <div class="section-title-wrapper">
+        <h2 class="section-title">💰 خدمات فودافون كاش (Vodafone Cash) المادية</h2>
+    </div>
     <div class="grid">
         <div class="card">
-            <span class="card-title">قائمة فودافون كاش</span>
+            <span class="card-title">القائمة الرئيسية لـ فودافون كاش</span>
             <div class="code-box" onclick="copyCode('*9#')">*9#</div>
         </div>
         <div class="card">
-            <span class="card-title">رصيد محفظة كاش</span>
+            <span class="card-title">الاستعلام عن رصيد محفظة كاش الحالي</span>
             <div class="code-box" onclick="copyCode('*9*13#')">*9*13#</div>
         </div>
         <div class="card">
-            <span class="card-title">تحويل أموال كاش</span>
+            <span class="card-title">تحويل أموال فودافون كاش سريعا</span>
             <div class="code-box" onclick="copyCode('*9*7#')">*9*7#</div>
         </div>
         <div class="card">
-            <span class="card-title">شحن رصيد من المحفظة</span>
+            <span class="card-title">شحن رصيد لنفسك من محفظة كاش</span>
             <div class="code-box" onclick="copyCode('*9*0#')">*9*0#</div>
         </div>
         <div class="card">
-            <span class="card-title">دفع فواتير الكهرباء</span>
+            <span class="card-title">دفع الفواتير والكهرباء والخدمات</span>
             <div class="code-box" onclick="copyCode('*9*105#')">*9*105#</div>
         </div>
     </div>
 
-    <!-- خدمات إضافية -->
-    <h2 class="section-title">📞 خدمات إضافية</h2>
+    <div class="section-title-wrapper">
+        <h2 class="section-title">📞 الخدمات الإضافية والتحويل والإلغاء</h2>
+    </div>
     <div class="grid">
         <div class="card">
-            <span class="card-title">إلغاء الكول تون</span>
+            <span class="card-title">إلغاء خدمة الكول تون نهائياً</span>
             <div class="code-box" onclick="copyCode('*550*0#')">*550*0#</div>
         </div>
         <div class="card">
-            <span class="card-title">تفعيل خاصية غير متاح</span>
+            <span class="card-title">تفعيل خاصية الخط غير متاح</span>
             <div class="code-box" onclick="copyCode('*21*777#')">*21*777#</div>
         </div>
         <div class="card">
-            <span class="card-title">إلغاء خاصية غير متاح</span>
+            <span class="card-title">إلغاء تفعيل خاصية غير متاح</span>
             <div class="code-box" onclick="copyCode('#21#')">#21#</div>
         </div>
         <div class="card">
-            <span class="card-title">تفعيل الانتظار</span>
+            <span class="card-title">تفعيل خدمة انتظار المكالمات الثانية</span>
             <div class="code-box" onclick="copyCode('*43#')">*43#</div>
         </div>
         <div class="card">
-            <span class="card-title">نقاط فودافون وان</span>
+            <span class="card-title">الاستعلام عن نقاط فودافون وان (Vodafone One)</span>
             <div class="code-box" onclick="copyCode('*818*2#')">*818*2#</div>
         </div>
     </div>
@@ -287,7 +348,7 @@
     function copyCode(text) {
         let cleanText = text.replace('الرقم', '').replace('المبلغ', '').replace('الفليكسات', '');
         navigator.clipboard.writeText(cleanText).then(() => {
-            alert("تم نسخ الكود: " + cleanText);
+            alert("تم نسخ الكود بنجاح: " + cleanText);
         });
     }
 
